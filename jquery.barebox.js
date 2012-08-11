@@ -6,7 +6,7 @@
         }, options);
 
         var body = $('body');
-        var target = $(this).data('target');
+        var target = $($(this).data('target'));
         var overlay = $('<div id="barebox_overlay">').appendTo(body);
 
         if (target.length < 1)
