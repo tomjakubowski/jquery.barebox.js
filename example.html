@@ -14,43 +14,49 @@
     });
     </script>
     <style>
-    html {
-        overflow: auto;
-    }
     body {
-        background: #ffffee;
-        color: #333;
+        background: #eee8d5;
+        color: #073642;
         margin: 0;
         font-family: Georgia;
-        height: 100%;
-        overflow: auto;
     }
+    body.noscroll {
+        overflow: hidden;
+    }
+    a {
+        color: #268bd2;
+    }
+
     #barebox_overlay {
         display: none;
-        position: absolute;
+        position: fixed;
         left: 0;
         top: 0;
+        background: rgba(238,232,213,0.9);
+        z-index: 100;
         width: 100%;
         height: 100%;
-        background: #000;
-        opacity: 0.8;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-        z-index: 1;
+    }
+    #barebox_cell {
+        padding: 40px 0;
     }
     #whatever {
-        position: absolute;
         display: none;
         width: 800px;
-        height: 500px;
-        background: url(http://placekitten.com/800/500);
-        z-index: 10;
-        top: 50%;
-        left: 50%;
-        margin-left: -400px;
-        margin-top: -250px;
+        border: 2px solid #002b36;
+        background: #073642 url(http://placekitten.com/408/207) center no-repeat;
+        min-height: 400px;
+        height: 100%;
     }
-    #whatever img {
-        display: block;
+    @media screen and (min-height: 550px) {
+        #whatever {
+            background-image: url(http://placekitten.com/500/400);
+        }
+    }
+    @media screen and (min-height: 750px) {
+        #whatever {
+            background-image: url(http://placekitten.com/700/700);
+        }
     }
     #test {
         position: fixed;
