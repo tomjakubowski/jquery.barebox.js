@@ -14,7 +14,10 @@
 
         var mother = target.parent();
 
-        overlay.click(function() {
+        overlay.click(function(e) {
+            if (e.target !== this && (options.centered && e.target.id !== "barebox_cell"))
+                return;
+
             $(target).prependTo(mother);
             $(target).hide();
             body.removeClass(options.bodyClass);
