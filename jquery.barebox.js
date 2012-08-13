@@ -18,6 +18,8 @@
             if (e.target !== this && (options.centered && e.target.id !== "barebox_cell"))
                 return;
 
+            $(target).trigger('barebox_close');
+
             $(target).prependTo(mother);
             $(target).hide();
             body.removeClass(options.bodyClass);
