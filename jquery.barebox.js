@@ -28,7 +28,6 @@
         target.appendTo(overlay);
         target.show();
         target.data({
-            bareboxed: true,
             barebox_options: options,
             barebox_mother: mother });
 
@@ -48,7 +47,7 @@
         var mother = target.data('barebox_mother');
         var options = target.data('barebox_options');
 
-        if (target.data('bareboxed') !== true)
+        if (target.parents('#barebox_overlay').length < 1)
             throw 'barebox_close() must only be called on an active barebox';
 
         target.trigger('barebox_close');
