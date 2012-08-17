@@ -1,5 +1,6 @@
 (function($) {
-    $.fn.barebox = function(options) {
+    $.fn.extend({
+    'barebox': function(options) {
         options = $.extend({
             centered: true,
             bodyClass: 'noscroll'
@@ -30,7 +31,8 @@
 
         overlay.show();
         target.appendTo(overlay);
-        $(target).show();
+        target.show();
+        target.data('barebox_modal', true);
 
         if (options.centered === true) {
             overlay.css('display', 'table');
@@ -38,5 +40,5 @@
             target.css('display', 'inline-block');
         }
         return target;
-    };
+    }});
 })(jQuery);
