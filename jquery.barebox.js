@@ -51,7 +51,6 @@
         if (target.length < 1)
             return;
 
-        console.log(target);
         var overlay = target.parents('.barebox_overlay').first();
         var mother = target.data('barebox_mother');
         var options = target.data('barebox_options');
